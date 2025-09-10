@@ -1,0 +1,184 @@
+/* Google Font Import */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
+/* --- DEFAULT THEME VARIABLES (LIGHT MODE) --- */
+:root {
+    --bg-color: #f0f2f5;
+    --container-bg: #ffffff;
+    --card-bg: #f8f9fa;
+    --card-border: #e9ecef;
+    --header-text-color: #333;
+    --body-text-color: #666;
+    --primary-color: #007bff;
+    --shadow-color: rgba(0, 0, 0, 0.1);
+    --info-section-bg: linear-gradient(45deg, #007bff, #0056b3);
+    --info-section-text: #fff;
+    --button-text: #fff;
+}
+
+/* --- AUTOMATIC DARK MODE (Jab System Dark Mode mein ho aur koi theme select na ki ho) --- */
+@media (prefers-color-scheme: dark) {
+    :root:not([data-theme]) {
+        --bg-color: #121212;
+        --container-bg: #1e1e1e;
+        --card-bg: #2a2a2a;
+        --card-border: #3a3a3a;
+        --header-text-color: #e0e0e0;
+        --body-text-color: #b0b0b0;
+        --primary-color: #4dabf7;
+        --shadow-color: rgba(0, 0, 0, 0.4);
+        --info-section-bg: linear-gradient(45deg, #2c3e50, #1a2a4c);
+        --info-section-text: #e0e0e0;
+        --button-text: #121212;
+    }
+}
+
+/* --- MANUAL THEME OVERRIDES (Jab user button par click kare) --- */
+[data-theme="dark"] {
+    --bg-color: #121212;
+    --container-bg: #1e1e1e;
+    --card-bg: #2a2a2a;
+    --card-border: #3a3a3a;
+    --header-text-color: #e0e0e0;
+    --body-text-color: #b0b0b0;
+    --primary-color: #4dabf7;
+    --shadow-color: rgba(0, 0, 0, 0.4);
+    --info-section-bg: linear-gradient(45deg, #2c3e50, #1a2a4c);
+    --info-section-text: #e0e0e0;
+    --button-text: #121212;
+}
+
+[data-theme="ocean"] {
+    --bg-color: #e0f7fa;
+    --container-bg: #ffffff;
+    --card-bg: #b2ebf2;
+    --card-border: #80deea;
+    --header-text-color: #004d40;
+    --body-text-color: #00695c;
+    --primary-color: #00796b;
+    --info-section-bg: linear-gradient(45deg, #00796b, #004d40);
+}
+
+[data-theme="forest"] {
+    --bg-color: #f0fff4;
+    --container-bg: #ffffff;
+    --card-bg: #d7f9e9;
+    --card-border: #b8f2d5;
+    --header-text-color: #1e4620;
+    --body-text-color: #2f684d;
+    --primary-color: #4caf50;
+    --info-section-bg: linear-gradient(45deg, #4caf50, #1e4620);
+}
+
+/* --- GENERAL STYLING (Yeh upar diye gaye variables ka use karega) --- */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--body-text-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    transition: background-color 0.3s ease;
+}
+
+a { color: var(--primary-color); text-decoration: none; }
+
+/* ... (Baaki saara code bilkul same rahega jaisa aapne diya tha, kyunki woh variables use kar raha hai) ... */
+
+/* --- LOGIN & SIGNUP PAGE STYLING --- */
+.container { display: flex; width: 900px; height: 600px; background-color: var(--container-bg); box-shadow: 0 10px 30px var(--shadow-color); border-radius: 20px; overflow: hidden; }
+.info-section { flex: 1; background: var(--info-section-bg); color: var(--info-section-text); display: flex; flex-direction: column; justify-content: center; align-items: center; padding: 50px; text-align: center; }
+.info-section h1 { font-size: 3rem; margin-bottom: 20px; }
+.info-section p { font-size: 1.2rem; line-height: 1.6; }
+.form-section { flex: 1; padding: 50px; display: flex; flex-direction: column; justify-content: center; }
+.form-section h2 { font-size: 2.5rem; color: var(--header-text-color); margin-bottom: 20px; text-align: center; }
+.input-group { margin-bottom: 20px; }
+.input-group label { display: block; margin-bottom: 8px; font-weight: 600; color: var(--body-text-color); }
+.input-group input { width: 100%; padding: 12px 15px; border: 1px solid var(--card-border); border-radius: 8px; font-size: 1rem; background-color: var(--bg-color); color: var(--header-text-color); }
+.form-footer { text-align: center; margin-top: 20px; }
+.message { text-align: center; margin-bottom: 20px; padding: 10px; border-radius: 5px; font-weight: 600; }
+.message.error { color: #d9534f; background-color: #f2dede30; }
+.message.success { color: #5cb85c; background-color: #dff0d830; }
+button { width: 100%; padding: 15px; border: none; border-radius: 8px; background: var(--primary-color); color: var(--button-text); font-size: 1.1rem; font-weight: 700; cursor: pointer; }
+
+/* --- DASHBOARD STYLING --- */
+.dashboard-container { width: 90%; max-width: 1000px; background: var(--container-bg); padding: 40px; border-radius: 10px; box-shadow: 0 4px 20px var(--shadow-color); text-align: center; }
+.dashboard-header { position: relative; padding-top: 50px; }
+.dashboard-header h1 { font-size: 2.8rem; font-weight: 700; color: var(--header-text-color); margin-bottom: 10px; }
+.dashboard-header p { font-size: 1.1rem; margin-bottom: 30px; }
+.options-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 25px; }
+.option-card { background-color: var(--card-bg); padding: 25px; border-radius: 10px; text-decoration: none; border: 1px solid var(--card-border); transition: transform 0.3s ease, box-shadow 0.3s ease; }
+.option-card:hover { transform: translateY(-8px); box-shadow: 0 8px 25px var(--shadow-color); }
+.option-card i { font-size: 2.5rem; color: var(--primary-color); margin-bottom: 15px; }
+.option-card h2 { font-size: 1.3rem; margin-bottom: 8px; color: var(--header-text-color); }
+.option-card p { font-size: 0.9rem; color: var(--body-text-color); }
+.dashboard-footer a { font-weight: bold; color: var(--primary-color); font-size: 1.1rem; }
+
+/* --- THEME SWITCHER STYLING --- */
+.theme-switcher { display: flex; justify-content: center; gap: 15px; margin-bottom: 30px; }
+.theme-btn { width: 25px; height: 25px; border-radius: 50%; border: 2px solid #ddd; cursor: pointer; transition: transform 0.2s ease; background-size: cover; background-position: center;}
+.theme-btn:hover { transform: scale(1.1); }
+.theme-btn[data-theme="light"] { background-color: #f0f2f5; }
+.theme-btn[data-theme="dark"] { background-color: #121212; }
+.theme-btn[data-theme="ocean"] { background-color: #b2ebf2; }
+.theme-btn[data-theme="forest"] { background-color: #d7f9e9; }
+.custom-bg-btn { display: flex; justify-content: center; align-items: center; font-size: 16px; background-color: #e9ecef; color: var(--header-text-color); }
+.custom-bg-btn i { color: var(--header-text-color); margin: 0; }
+
+/* --- Custom User Image Theme --- */
+/* (Yeh waise hi rahega, kyunki yeh JavaScript se control hota hai) */
+[data-theme="custom"] .dashboard-container,
+[data-theme="custom"] .container { background-color: rgba(30, 30, 30, 0.85); backdrop-filter: blur(5px); }
+[data-theme="custom"] h1, [data-theme="custom"] h2, [data-theme="custom"] p, [data-theme="custom"] label, [data-theme="custom"] a { color: #f0f0f0; }
+[data-theme="custom"] .option-card p { color: #ccc; }
+
+/* --- LOGOUT BUTTON --- */
+.logout-btn { position: absolute; top: 20px; right: 20px; background-color: var(--card-bg); color: var(--body-text-color); padding: 8px 15px; border-radius: 5px; font-weight: bold; text-decoration: none; border: 1px solid var(--card-border); transition: background-color 0.3s ease, color 0.3s ease; }
+.logout-btn:hover { background-color: var(--primary-color); color: var(--button-text); }
+/* --- Admin Panel Tab Styling --- */
+.tab-nav {
+    display: flex;
+    border-bottom: 2px solid #3a3a3a;
+    margin-bottom: 20px;
+}
+.tab-btn {
+    padding: 15px 25px;
+    cursor: pointer;
+    border: none;
+    background-color: transparent;
+    color: #b0b0b0;
+    font-size: 1.1rem;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+.tab-btn:hover {
+    background-color: #2a2a2a;
+}
+.tab-btn.active {
+    color: #4dabf7;
+    border-bottom: 2px solid #4dabf7;
+}
+.tab-pane {
+    display: none;
+}
+.tab-pane.active {
+    display: block;
+}
+/* Table Styling */
+.table-container { margin-top: 20px; }
+table { width: 100%; border-collapse: collapse; }
+table thead tr { background-color: #333; }
+table th, table td { padding: 12px; border: 1px solid #3a3a3a; text-align: left; }
+table td { vertical-align: middle; }
+.action-btn { padding: 5px 10px; border-radius: 4px; color: white; text-decoration: none; font-weight: bold; }
+.action-btn.delete { background-color: #c92a2a; }
+.action-btn.edit { background-color: #228be6; }
+
+/* Form Styling */
+.form-container { background-color: #2a2a2a; padding: 20px; border-radius: 8px; margin-bottom: 30px;}
+.inline-form { display: flex; gap: 15px; align-items: flex-end; flex-wrap: wrap; }
+.inline-form input { flex-grow: 1; }
+.inline-form button { width: auto; }
